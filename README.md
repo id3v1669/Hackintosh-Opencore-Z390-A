@@ -1,14 +1,9 @@
-# Z170i-Pro-Gaming-OpenCore
-
-## I don't own the hardware right now. If you want to continue this repo please contact me and I'll transfer the ownership. The [HD530 branch](https://github.com/BrushXue/Z170i-Pro-Gaming-OpenCore/tree/HD530) is updated for Monterey. If you have dGPU, you may adjust `config.plist` accordingly.
-
-[中文版本](README_zh-cn.md)
+# Asus Z390-A Opencore Hackintosh
 
 
+This is an OpenCore version of ASUS Z390-A Prime Hackintosh EFI. It works on macOS Monterey 12.0.1(21A559). Sleep, Airdrop and Handoff are supported.
 
-This is an OpenCore version of ASUS Z170i Pro Gaming Hackintosh EFI. It works on macOS Big Sur (11.3.1). FCPX GPU rendering works smoothly. HDR can be enabled. Sleep, Airdrop and Handoff are supported.
-
-![image](Screenshot_en-us.png)
+![image](OS_Screenshot.png)
 
 ## Notes
 1. Mac boot chime is added. You may need to modify `config.plist/UEFI/Audio/AudioOut` based you motherboard layout.

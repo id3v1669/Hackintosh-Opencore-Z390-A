@@ -21,33 +21,39 @@ This is an OpenCore version of ASUS Z390-A Prime Hackintosh EFI. Used to tripleb
 | SSD1 | Samsung | 970 Evo Plus 2tb nvme | | Main SSD Mac OS |
 | SSD2 | Samsung | 980 Pro 1tb nvme | | SSD Windows |
 | SSD3 | Samsung | 870 QVO 1tb sata | | SSD Linux |
-| Wireless | Broadcom | BCM94360cd PCI | built-in | |
+| Wireless | Broadcom | BCM94360CD | built-in | |
 | Ethernet | Intel | I219-V | [IntelMausi](https://github.com/acidanthera/IntelMausi) | |
 | Audio | Realtek | ALC S1220A | [AppleALC](https://github.com/acidanthera/AppleALC) | Layout in DeviceProps |
 | Monitor1 | Philips | 325E1 | | |
 | Monitor2 | MSI | Optix AG32C | | |
 
-*QCA61x4A is not supported. Follow [this guide](https://www.tonymacx86.com/threads/bcm94352z-installed-on-asus-z170i-pro-gaming-wifi-and-bt.191274) the replace the onboard wireless card. Theoretically BCM94352Z or BCM94360CS2 with adapter can work as well.
 
 ## BIOS Setup
-| Name | Option |
-| --- | --- |
-| SW Guard Extensions (SGX) | Disabled |
-| CFG Lock | Disabled |
-| VT-d | Disabled |
-| Above 4G Decoding | Enabled |
-| Primary Display | PCIE |
-| iGPU-Multi-Monitor | Enabled |
-| DVMT Pre-Allocated | 128M |
-| IOAPIC 24-119 Entries | Disabled |
-| Network Stack | Disabled |
-| Legacy USB Support| Enabled |
-| Fast Boot | Disabled |
-| OS Type | Other OS |
-| Launch CSM | Disabled |
+| Name | Option | Comment |
+| --- | --- | --- |
+| Intel SpeedStep | Enabled | |
+| Turbo Mode | Enabled | |
+| CFG Lock | Disabled | |
+| VT-d | Enabled | |
+| Above 4G Decoding | Enabled | |
+| Re-Size BAR Support | Disabled | Need to figure out how to use this feature in opencore |
+| SR-IOV Support | Disabled | |
+| Primary Display | PCIE | |
+| iGPU-Multi-Monitor | Enabled | |
+| DVMT Pre-Allocated | 1024M | |
+| TPM Device Selection | Firmware TPM | |
+| Security Device Support | Enable | |
+| TPM2.0 UEFI Spec Version | TCG_2 | |
+| Serial Port | Off | |
+| ErP Ready | Disabled | |
+| Legacy USB Support | Enabled | |
+| XHCI Hand-off | Enabled | |
+| Fast Boot | Disabled | |
+| OS Type | Other OS | in case you want windows uefi mode use this [Guide](https://www.tonymacx86.com/threads/guide-opencore-and-uefi-secure-boot-using-windows-subsystem-for-linux.317166/#post-2295190) |
+| Launch CSM | Disabled | |
 
 ## Known issue
-GPU fan spins at max RPM for several seconds during boot occasionally and runs normally in desktop. This is a XFX BIOS bug. The problem can be solved by flashing other similar RX 580 BIOS.
+No issues found
 
 ## Acknowledgement
 Apple for macOS

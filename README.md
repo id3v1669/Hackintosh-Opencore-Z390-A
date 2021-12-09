@@ -10,9 +10,9 @@ This is an OpenCore version of ASUS Z390-A Prime Hackintosh EFI. Used to tripleb
 
 
 ## Changelog
-*update 0.7.1->0.7.4
-*update 0.7.4->0.7.5
-*update 0.7.5->0.7.6
+1. update 0.7.1->0.7.4
+2. update 0.7.4->0.7.5
+3. update 0.7.5->0.7.6
 
 
 ## Hardware

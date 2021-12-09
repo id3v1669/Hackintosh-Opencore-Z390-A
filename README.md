@@ -1,34 +1,31 @@
 # Asus Z390-A Opencore Hackintosh
 
 
-This is an OpenCore version of ASUS Z390-A Prime Hackintosh EFI. It works on macOS Monterey 12.0.1(21A559). Sleep, Airdrop and Handoff are supported.
+This is an OpenCore version of ASUS Z390-A Prime Hackintosh EFI. Used to tripleboot Mac OS, Windows and Linux(Ubuntu). It works on macOS Monterey 12.0.1(21A559). Sleep, Airdrop and Handoff are supported.
 
 ![image](OS_Screenshot.png)
 
 ## Notes
-1. Mac boot chime is added. You may need to modify `config.plist/UEFI/Audio/AudioOut` based you motherboard layout.
-2. If you don't have a dGPU, i.e. output via iGPU, refer to [HD530 branch](https://github.com/BrushXue/Z170i-Pro-Gaming-OpenCore/tree/HD530).
-3. OpenCanopy and HiDPI are enabled. If you don't own a 4K monitor, disable it in `config.plist/NVRAM/Add/4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14/UIScale`.
-4. I chose 15 USB ports in my USB map. 2x USB 3.0(front) + 4x USB 3.0(back) + 2x USB 2.0(back) + Bluetooth(internal via M.2) = 15 ports. Generally there's no front USB 2.0 port on ITX cases so I didn't include onboard USB 2.0 ports(HS11/HS12). I believe this is a reasonable trade-off for most people. However if you bought some strange Wi-Fi card which requires USB 2.0 header, you need follow [this guide](https://dortania.github.io/USB-Map-Guide/) to create your own USB map.
-5. For onboard 3.5mm audio output you need to plug into the green(line out) jack. If you restart from Windows, there will be no sound. This is a issue in the Windows Realtek driver as they modified the DSDT. Always shutdown from windows then boot to macOS.
+1. Mac boot chime is added. You may need to modify `config.plist/UEFI/Audio/AudioOut` and `config.plist/DeviceProperties/Add/PathToDevice` based you motherboard layout.
+2. For USB ports I picked USBMap.kext without port limit patch. During postinstall probably you will need to make your own.
 
-![image](Z170iProGaming.jpg)
 
 ## Hardware
 | Item | Brand | Model | Driver | Comment |
 |-----|-----|-----|-----|-----|
-| Motherboard | ASUS | Z170i Pro Gaming | | |
-| CPU | Intel | i7-6700K | | |
-| RAM | G.SKILL | TridentZ 2x16GB DDR4 3000 | | Overclocked to 3200 |
-| iGPU | Intel | HD Graphics 530 | built-in | Headless mode |
-| dGPU | XFX | RX 580 GTS XXX Edition 8GB | built-in | 2304 SP |
-| SSD | Samsung | SM961 1TB NVMe | [NVMeFix](https://github.com/acidanthera/NVMeFix) | |
-| Wireless | Broadcom | BCM94360NG M.2 | built-in | QCA61x4A was replaced* |
+| Motherboard | ASUS | Z390-A Prime | | |
+| CPU | Intel | i9-9900K | | |
+| RAM | XPG | XPG 2x16GB DDR4 3600 | | XMP 3600 |
+| iGPU | Intel | UHD 630 | built-in | |
+| dGPU | Saphire | RX5700 XT Nitro+ | built-in | |
+| SSD1 | Samsung | 970 Evo Plus 2tb nvme | | Main SSD Mac OS |
+| SSD2 | Samsung | 980 Pro 1tb nvme | | SSD Windows |
+| SSD3 | Samsung | 870 QVO 1tb sata | | SSD Linux |
+| Wireless | Broadcom | BCM94360cd PCI | built-in | |
 | Ethernet | Intel | I219-V | [IntelMausi](https://github.com/acidanthera/IntelMausi) | |
-| Audio | Realtek | ALC1150 | [AppleALC](https://github.com/acidanthera/AppleALC) | |
-| PSU | Corsair | SF600 Platinum | | |
-| Case | Dan | A4-SFX | | |
-| Monitor | Dell | U2720Q | | |
+| Audio | Realtek | ALC S1220A | [AppleALC](https://github.com/acidanthera/AppleALC) | Layout in DeviceProps |
+| Monitor1 | Philips | 325E1 | | |
+| Monitor2 | MSI | Optix AG32C | | |
 
 *QCA61x4A is not supported. Follow [this guide](https://www.tonymacx86.com/threads/bcm94352z-installed-on-asus-z170i-pro-gaming-wifi-and-bt.191274) the replace the onboard wireless card. Theoretically BCM94352Z or BCM94360CS2 with adapter can work as well.
 

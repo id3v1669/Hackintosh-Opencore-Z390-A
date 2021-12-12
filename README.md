@@ -1,6 +1,5 @@
 # Asus Z390-A Opencore Hackintosh
 
-
 This is an OpenCore version of ASUS Z390-A Prime Hackintosh EFI. Used to tripleboot Mac OS, Windows and Linux(Ubuntu). It works on macOS Monterey 12.0.1(21A559). Sleep, Airdrop and Handoff are supported.
 
 ![image](OS_Screenshot.png)
@@ -8,6 +7,12 @@ This is an OpenCore version of ASUS Z390-A Prime Hackintosh EFI. Used to tripleb
 ## Notes
 1. Mac boot chime is added. You may need to modify `config.plist/UEFI/Audio/AudioOut` and `config.plist/DeviceProperties/Add/PathToDevice` based you motherboard layout.
 2. For USB ports I picked USBMap.kext without port limit patch. During postinstall probably you will need to make your own.
+
+
+## Changelog
+1. update 0.7.1->0.7.4
+2. update 0.7.4->0.7.5
+3. update 0.7.5->0.7.6
 
 
 ## Hardware

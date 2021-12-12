@@ -36,8 +36,8 @@ This is an OpenCore version of ASUS Z390-A Prime Hackintosh EFI. Used to tripleb
 | CFG Lock | Disabled | |
 | VT-d | Enabled | |
 | Above 4G Decoding | Enabled | |
-| Re-Size BAR Support | Disabled | Need to figure out how to use this feature in opencore |
-| SR-IOV Support | Disabled | |
+| Re-Size BAR Support | Auto | |
+| SR-IOV Support | Enabled | |
 | Primary Display | PCIE | |
 | iGPU-Multi-Monitor | Enabled | |
 | DVMT Pre-Allocated | 1024M | |
